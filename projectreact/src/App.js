@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Tweet from './tweet';
 
 function App(){
-
+  const [count, setCount] = useState(10);
+  function increment (){
+   setCount(count + 1);
+}
   return(
     <div className='app'>
-      <Tweet name="Dev ED" message="This is a Random Tweet"/>
-      <Tweet name="John Snow" message="My new Course is Available"/>
-      <Tweet name="Winter is Coming" message="I'm the True King"/>
+      <button onClick={increment}>Incrememnt</button>
+      <p>{count}</p>
       <Tweet name="Mosh" message="700K my dudes"/>
 
     </div>
