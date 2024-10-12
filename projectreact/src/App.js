@@ -2,20 +2,17 @@ import React, {useState} from 'react';
 import Tweet from './tweet';
 
 function App(){
-  const [red, setRed] = useState(false)
-  const [count, setCount] = useState(10);
-  function increment (){
-   setCount(count + 1);
-  //  setRed(true)
-  //toggle
-  setRed(!red);
-}
+const [users, setUsers] = useState([
+  {name: "Abir", message: "Be a Good Man"},
+  {name: "Hasan", message: "Money is Not Everything"},
+  {name: "Sonet", message: "Time is Most Expensive Things"}
+]);
+
   return(
     <div className='app'>
-      <button onClick={increment}>Incrememnt</button>
-      <h1 className={red ? "red" : ""}>Red Color</h1>
-      <p>{count}</p>
-      <Tweet name="Mosh" message="700K my dudes"/>
+     {users.map(user => (
+      <Tweet name= {user.name} message = {user.message}/>
+     ))}
 
     </div>
   );
